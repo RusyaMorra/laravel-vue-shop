@@ -39,7 +39,9 @@ Guardian (система разрешений, простым способом)
 
 
 
-
+# docker-compose run artisan make:controller ./Api/v1/CatController --resource
+# docker-compose run artisan route:list
+# docker-compose run  artisan make:model cart  -m
 
 
 
