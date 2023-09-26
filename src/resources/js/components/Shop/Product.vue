@@ -19,7 +19,7 @@
             <p>{{ description }}</p>
         </div>
         <div class="uk-card-footer">
-            <button href="#" class="uk-button uk-button-text" ::data-id="id"  @click.prevent="addCart()">Добавить в корзину</button>
+            <button href="#" class="uk-button uk-button-text" ::data-id="id"  @click.prevent="addCart($event)">Добавить в корзину</button>
         </div>
     </div>
 </template>
@@ -71,10 +71,9 @@
             error: false
         }),
         methods: {
-            addCart(Event) {
+            addCart(e) {
                 this.form.user_id = getCookie('user_id');
-                console.log(Event);
-                this.form.product_id = document.getElementById('product-id').innerText;
+                this.form.product_id = e.target.attributes[2].nodeValue;
                 console.log(this.form);
 
 

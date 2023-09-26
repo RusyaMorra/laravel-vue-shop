@@ -2137,11 +2137,10 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
-    addCart: function addCart(Event) {
+    addCart: function addCart(e) {
       var _this = this;
       this.form.user_id = Object(_utils__WEBPACK_IMPORTED_MODULE_0__["getCookie"])('user_id');
-      console.log(Event);
-      this.form.product_id = document.getElementById('product-id').innerText;
+      this.form.product_id = e.target.attributes[2].nodeValue;
       console.log(this.form);
       this.loading = true;
       axios.post('/api/v1/cart/add', this.form, {
@@ -39730,7 +39729,7 @@ var render = function() {
           on: {
             click: function($event) {
               $event.preventDefault()
-              return _vm.addCart()
+              return _vm.addCart($event)
             }
           }
         },
