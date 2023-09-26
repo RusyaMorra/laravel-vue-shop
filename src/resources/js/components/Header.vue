@@ -8,6 +8,7 @@
                     <router-link :to="link.href" v-if="!link.authorizedOnly && link.showAlways" >{{ link.title }}</router-link>
                     <router-link :to="link.href" v-if="link.authorizedOnly && isauthorized && role == link.rigths ">{{ link.title }}</router-link>
                     <router-link :to="link.href" v-if="link.authorizedOnly == false && !isauthorized">{{ link.title }}</router-link>
+                    <router-link :to="link.href" v-if="link.authorizedOnly && isauthorized && link.title == 'Корзина' ">{{ link.title }}</router-link>
                    
                     
                 </li>
@@ -88,6 +89,14 @@
                         title: "войти",
                         href: "/login",
                         authorizedOnly: false,
+                        rigths: 'All',
+                        showAlways: false,
+                       
+                    },
+                    {
+                        title: "Корзина",
+                        href: "/cart",
+                        authorizedOnly: true,
                         rigths: 'All',
                         showAlways: false,
                        

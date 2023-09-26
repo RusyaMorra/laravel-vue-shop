@@ -15,7 +15,7 @@
             </div>
       
             <div style="display:flex; flex-wrap: wrap; width:85%;" >
-                <product
+                <product 
                     v-for="product in products"
                     :id="product.id"
                     :name="product.name"

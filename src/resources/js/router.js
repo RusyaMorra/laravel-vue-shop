@@ -14,6 +14,8 @@ import CreateCat from "./views/CatCRUD/CreateCat";
 import UpdateCat from "./views/CatCRUD/UpdateCat";
 import DeleteCat from "./views/CatCRUD/DeleteCat";
 
+import Cart from "./views/Cart/Cart";
+
 import Register from "./views/Auth/Register";
 import Login from "./views/Auth/Login";
 
@@ -61,6 +63,10 @@ const routes = [
     {
         path: "/login",
         component: Login
+    },
+    {
+        path: "/Cart",
+        component: Cart
     }
 ];
 
