@@ -5,7 +5,7 @@
                 <div class="uk-width-expand">
                     <h3 class="uk-card-title uk-margin-remove-bottom"><a v-bind:href="'/productspage/'+ id">{{name}}</a></h3>
                     <p class="uk-text-meta uk-margin-remove-top">
-                        <h1 id = "product-id">{{id}}</h1>
+                        <h1 id = "product-id"></h1>
                         <time datetime="2016-04-01T19:00">{{price}} тенге</time><br>
                         <time datetime="2016-04-01T19:00">{{isavailable == '1'?'есть в наличии':'нет в наличии'}}</time> <br>
                         <div>{{catname}}</div> <br>
@@ -19,7 +19,7 @@
             <p>{{ description }}</p>
         </div>
         <div class="uk-card-footer">
-            <button href="#" class="uk-button uk-button-text" @click.prevent="addCart">Добавить в корзину</button>
+            <button href="#" class="uk-button uk-button-text" ::data-id="id"  @click.prevent="addCart()">Добавить в корзину</button>
         </div>
     </div>
 </template>
@@ -71,8 +71,9 @@
             error: false
         }),
         methods: {
-            addCart() {
+            addCart(Event) {
                 this.form.user_id = getCookie('user_id');
+                console.log(Event);
                 this.form.product_id = document.getElementById('product-id').innerText;
                 console.log(this.form);
 

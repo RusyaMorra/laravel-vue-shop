@@ -12,19 +12,15 @@ class CartController extends Controller
 {
     
     public function index(Request $request)
-    {// выводим товар = номеру товаров колонке cart в где юзер равен числу с фронта
-       $carts = Cart::where('user_id', $request->user_id)->all();
-       //$carts->product_id;
+    {
+
+       $ProductIds = Cart::where('user_id', $request->user_id)->select('product_id')->get();
        
+        
+      
+        $producsIncards = Products::findMany($ProductIds);
        
-      // $productArray = $carts->select(['product_id']);
-       //Products::all()
-
-
-
-       
-
-        return $carts ;
+        return  $producsIncards;
     }
 
 

@@ -2137,9 +2137,10 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
-    addCart: function addCart() {
+    addCart: function addCart(Event) {
       var _this = this;
       this.form.user_id = Object(_utils__WEBPACK_IMPORTED_MODULE_0__["getCookie"])('user_id');
+      console.log(Event);
       this.form.product_id = document.getElementById('product-id').innerText;
       console.log(this.form);
       this.loading = true;
@@ -39685,7 +39686,7 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("p", { staticClass: "uk-text-meta uk-margin-remove-top" }),
-            _c("h1", { attrs: { id: "product-id" } }, [_vm._v(_vm._s(_vm.id))]),
+            _c("h1", { attrs: { id: "product-id" } }),
             _vm._v(" "),
             _c("time", { attrs: { datetime: "2016-04-01T19:00" } }, [
               _vm._v(_vm._s(_vm.price) + " тенге")
@@ -39725,11 +39726,11 @@ var render = function() {
         "button",
         {
           staticClass: "uk-button uk-button-text",
-          attrs: { href: "#" },
+          attrs: { href: "#", ":data-id": _vm.id },
           on: {
             click: function($event) {
               $event.preventDefault()
-              return _vm.addCart($event)
+              return _vm.addCart()
             }
           }
         },
