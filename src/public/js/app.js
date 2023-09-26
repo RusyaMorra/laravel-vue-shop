@@ -3093,6 +3093,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 
 
@@ -41153,6 +41155,8 @@ var render = function() {
     "div",
     [
       _vm.loading ? _c("spin") : _vm._e(),
+      _vm._v(" "),
+      _c("button", [_vm._v("Сортировать по цене")]),
       _vm._v(" "),
       _c("div", { staticClass: "shop-wrapper" }, [
         _c(

@@ -1,7 +1,9 @@
 <template>
     <div>
         <spin v-if="loading"></spin>
+        <button>Сортировать по цене</button>
         <div class="shop-wrapper">
+            
             <div class="category" style="display:flex; flex-wrap: wrap;" >
             <Cat 
                 v-if="isShown"
