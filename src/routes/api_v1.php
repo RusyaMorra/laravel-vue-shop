@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\v1\ProductsController;
+use App\Http\Controllers\Api\v1\ProductsFiltersController;
 use App\Http\Controllers\Api\v1\CatsController;
 use App\Http\Controllers\Api\v1\CartController;
 use App\Http\Controllers\Api\v1\Auth\RegisterController;
@@ -30,3 +31,5 @@ Route::post('/auth/register', [RegisterController::class, 'register']);
 
 Route::post('/cart/add', [CartController::class, 'store']);
 Route::post('/cart/get', [CartController::class, 'index']);
+
+Route::get('/filter/desc', [ProductsFiltersController::class, 'index']);

@@ -2046,7 +2046,7 @@ __webpack_require__.r(__webpack_exports__);
       "default": "NULL"
     },
     isshown: {
-      type: String,
+      type: Number,
       "default": "NULL"
     }
   }
@@ -3136,6 +3136,16 @@ __webpack_require__.r(__webpack_exports__);
         _this2.cats = res.data;
         setTimeout(function () {
           _this2.loading = false;
+        }, 500);
+      });
+    },
+    sortByASC: function sortByASC() {
+      var _this3 = this;
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('/api/v1/filter/desc').then(function (res) {
+        _this3.products = [];
+        _this3.products = res.data;
+        setTimeout(function () {
+          _this3.loading = false;
         }, 500);
       });
     }
@@ -41156,7 +41166,18 @@ var render = function() {
     [
       _vm.loading ? _c("spin") : _vm._e(),
       _vm._v(" "),
-      _c("button", [_vm._v("Сортировать по цене")]),
+      _c(
+        "button",
+        {
+          on: {
+            click: function($event) {
+              $event.preventDefault()
+              return _vm.sortByASC($event)
+            }
+          }
+        },
+        [_vm._v("Сортировать цены по ASC ")]
+      ),
       _vm._v(" "),
       _c("div", { staticClass: "shop-wrapper" }, [
         _c(

@@ -1,7 +1,7 @@
 <template>
     <div>
         <spin v-if="loading"></spin>
-        <button>Сортировать по цене</button>
+        <button @click.prevent="sortByASC">Сортировать цены по ASC </button>
         <div class="shop-wrapper">
             
             <div class="category" style="display:flex; flex-wrap: wrap;" >
@@ -72,6 +72,18 @@
                 .then(res => {
                     console.log(res.data);
                     this.cats = res.data;
+                    setTimeout(() => {
+                        this.loading = false;
+                    }, 500)
+                })
+            },
+
+            sortByASC() {
+               axios.get('/api/v1/filter/desc')
+                .then(res => {
+                    this.products = [];
+                    this.products = res.data;
+                    
                     setTimeout(() => {
                         this.loading = false;
                     }, 500)

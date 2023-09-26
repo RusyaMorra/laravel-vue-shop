@@ -25,7 +25,7 @@
                 default: "NULL"
             },
             isshown: {
-                type: String,
+                type: Number,
                 default: "NULL"
             }
         }
